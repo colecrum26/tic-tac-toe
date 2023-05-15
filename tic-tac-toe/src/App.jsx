@@ -1,4 +1,4 @@
-import Board from "./components/gameBoard";
+import GameBoard from "./components/gameBoard";
 import "./App.css";
 import "./boardStyle.css";
 
@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      <Board />
+      <GameBoard />
     </div>
   );
 }
