@@ -31,7 +31,7 @@ export default function GameBoard() {
   if (winner) {
     status = "Winner: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = (xIsNext ? "X" : "O") + "'s Move";
   }
 
   return (
