@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import GameBoard from "./components/gameBoard";
+import Start from "./components/startScreen";
 import "./App.css";
 import "./boardStyle.css";
-import Start from "./components/startScreen";
 
 function App() {
 
@@ -10,7 +9,6 @@ function App() {
     <div className="App">
       {/* StartScreen */}
       <Start />
-      <GameBoard />
     </div>
   );
 }

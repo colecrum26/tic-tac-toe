@@ -1,7 +1,11 @@
 // allows players to name themselves (with default Player1/2)
 // button-click starts the game after players are named
 
+{/* <Square value={squares[0]} onSquareClick={() => handleClick(0)}/> */}
+
 import { useState } from "react";
+import GameBoard from "./gameBoard";
+
 
 function Players({player1}, {player2}) {
     return (
@@ -9,6 +13,14 @@ function Players({player1}, {player2}) {
         <span>{player1}</span>
         <span>{player2}</span>
         </div>
+    )
+}
+
+function StartBtn(props) {
+    return (
+        <button id="startBtn" onClick={onStartClick}>
+            Start Game
+        </button>
     )
 }
 
@@ -20,18 +32,27 @@ export default function Start() {
         
     }
 
+    function handleStart() {
+        return (
+            <div>
+                <GameBoard />
+            </div>
+        )
+    }
+
     return (
         <div>
         <form >
-            <label htmlFor="player1"></label>
             <input type="text" name="player1" placeholder="Player 1" />
             <button type="submit" id="player1" onClick={handlePlayer}>Enter</button>
-            <label htmlFor="player2"></label>
-            <button type="submit" id="player2" onClick={handlePlayer}>Enter</button>
             <input type="text" name="player2" placeholder="Player 2"/>
+            <button type="submit" id="player2" onClick={handlePlayer}>Enter</button>
         </form>
         <div>
             <Players />
+        </div>
+        <div>
+            <StartBtn onStartClick={() => handleStart()}/>
         </div>
         </div>
 
