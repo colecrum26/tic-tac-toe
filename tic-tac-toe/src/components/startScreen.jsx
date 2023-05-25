@@ -1,4 +1,4 @@
-// allows players to name themselves (with default Player1/2)
+// allows players to name themselves (with default Player1/2) and be used during game
 // button-click starts the game after players are named
 
 {/* <Square value={squares[0]} onSquareClick={() => handleClick(0)}/> */}
