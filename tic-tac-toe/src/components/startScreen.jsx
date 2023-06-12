@@ -1,37 +1,22 @@
 import { useState } from "react";
-import GameBoard from "./gameBoard";
+import handleStart from "../helpers/start.helper";
 // allows players to name themselves (with default Player1/2) and be used during game
 // button-click starts the game after players are named
 
-// let player1 = window.prompt("Enter Player 1");
-// let player2 = window.prompt("Enter Player 2");
-
-// setPlayers([player1, player2]);
-
-function Players({ player1 }) {
+function Players({ player1, player2 }) {
   return (
     <div>
-      {player1 && (
         <>
           <span>{player1}</span>
-
+          <span>{player2}</span>
         </>
-      )}
     </div>
   );
 }
 
-// function StartBtn(props) {
-//     return (
-//         <button id="startBtn" onClick={onStartClick}>
-//             Start Game
-//         </button>
-//     )
-// }
-
 export default function Start() {
-    const [player1, setPlayer1] = useState("");
-    const [player2, setPlayer2] = useState("");
+  const [player1, setPlayer1] = useState("");
+  const [player2, setPlayer2] = useState("");
   const [players, setPlayers] = useState([]);
 
   function handlePlayer(event) { 
@@ -41,14 +26,6 @@ export default function Start() {
     console.log(players);
   }
 
-  // function handleStart() {
-  //     return (
-  //         <div>
-  //             <GameBoard />
-  //         </div>
-  //     )
-  // }
-
   return (
     <div>
       <form>
@@ -56,15 +33,18 @@ export default function Start() {
         <button type="submit" id="player1" onClick={handlePlayer}>
           Enter
         </button>
-        <input type="text" name="player2" placeholder="Player 2" />
+        <input type="text" name="player2" placeholder="Player 2" onChange={event => setPlayer2(event.target.value)} />
         <button type="submit" id="player2" onClick={handlePlayer}>
           Enter
         </button>
       </form>
       <div>
         <Players player1={player1}/>
+        <Players player2={player2}/>
       </div>
-      <div>{/* <StartBtn onStartClick={() => handleStart()}/> */}</div>
+      <div>
+        <button onClick={handleStart}>Start</button>
+      </div>
     </div>
   );
 }
