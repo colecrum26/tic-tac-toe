@@ -1,2 +1,2 @@
 # tic-tac-toe
-React Native tic-tac-toe game
+React tic-tac-toe game
